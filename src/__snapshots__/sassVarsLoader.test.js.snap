@@ -5,7 +5,7 @@ exports[`With multi post-processing Returns expected Sass contents 1`] = `"sassF
 exports[`With sass syntax Returns expected Sass contents 1`] = `
 "// Vars from Webpack config
 $value1FromWebpack: foo
-$nested: (works: (veryWell: true, withoutProblems: indeed))
+$nested: (\\"works\\": (\\"veryWell\\": true, \\"withoutProblems\\": indeed))
 
 sassFileContents"
 `;
@@ -59,7 +59,7 @@ sassFileContents"
 exports[`With vars from webpack config Returns expected Sass contents 1`] = `
 "// Vars from Webpack config
 $value1FromWebpack: foo;
-$nested: (works: (veryWell: true, withoutProblems: indeed));
+$nested: (\\"works\\": (\\"veryWell\\": true, \\"withoutProblems\\": indeed));
 
 sassFileContents"
 `;
