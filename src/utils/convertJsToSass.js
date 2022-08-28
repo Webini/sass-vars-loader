@@ -8,7 +8,12 @@ function convertJsToSass(obj, syntax) {
 function formatNestedObject(obj, syntax) {
   const keys = Object.keys(obj)
   return keys
-    .map(key => `"${key.replace('\\', '\\\\').replace('"', '\\"')}": ${formatValue(obj[key], syntax)}`)
+    .map(key => {
+      if (/^[0-9]+$/.test(key)) {
+        return `${key}: ${formatValue(obj[key], syntax)}`
+      }
+      return `"${key.replace('\\', '\\\\').replace('"', '\\"')}": ${formatValue(obj[key], syntax)}`
+    })
     .join(', ')
 }
 
